@@ -4,6 +4,8 @@ An implementation of grambulation in Rust, as initially explained [on Reddit](ht
 
 ## Implementation
 
+If the MathJax doesn't render, try [viewing the README on GitHub](https://github.com/MatsFangohr/grambulate-rust).
+
 To grambulate two numbers $a$ and $b$ to a solution $c$, we must find the coordinates $c'$ of the solution, for which we must first determine the coordinates of $a$ and $b$ ($a'$ and $b'$) on the spiral.
 
 To do so, we can calculate the 'rings' $r_a$ and $r_b$ the numbers are in with the formula
