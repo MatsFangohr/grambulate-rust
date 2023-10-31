@@ -33,27 +33,40 @@ Let $a=5$ and $b=11$.
 
 We can use the ring formula to determine $r_a=1$ and $r_b=2$.
 
-Starting with $a$, we can calculate the 4 diagonal values on ring $r_a$:
-$v_3=3$
-$v_5=5$
-$v_7=7$
-$v_9=9$
+Starting with $a$, we can calculate the 4 diagonal values on ring $r_a$:  
+$v_3=3$  
+$v_5=5$  
+$v_7=7$  
+$v_9=9$  
 
 The closest of these values that is $\le{}a$ is $v_5=5$. The coordinates of that value are $v_5'=(-1\cdot{}r_a~|+1\cdot{}r_a) = (-1~|~1)$. As $v_5=a$, we don't need any further offsets.
 
-Moving on to $b$:
-$v_3=13$
-$v_5=17$
-$v_7=21$
-$v_9=25$
+Moving on to $b$:  
+$v_3=13$  
+$v_5=17$  
+$v_7=21$  
+$v_9=25$  
 
 The closest of these values that is $\le{}b$ is $v_3=13$. The coordinates of that value are $v_3'=(+1\cdot{}r_b~|+1\cdot{}r_b)=(2~|~2)$. As $v_3\neq{}b$, we still need to do more.
 
-As we determined the closest value _ahead_ of $b$ to be the top-right diagonal, we need to decrease the y coordinate of $v_3'$ by $v_3-b=13-11=2$. That leaves us with $\vec{c'}=\vec{v_3'}-\begin{pmatrix}0\\2\end{pmatrix}=\begin{pmatrix}2-0\\2-2\end{pmatrix}=\begin{pmatrix}2\\0\end{pmatrix}$.
+As we determined the closest value _ahead_ of $b$ to be the top-right diagonal, we need to decrease the y coordinate of $v_3'$ by $v_3-b=13-11=2$. That leaves us with:
+```math
+\vec{c'}=\vec{v_3'}-\begin{pmatrix}0\\2\end{pmatrix}=\begin{pmatrix}2-0\\2-2\end{pmatrix}=\begin{pmatrix}2\\0\end{pmatrix}
+```
 
-Now we know: $$a'=(-1~|~1)~~~~~~~b'=(2~|~0)$$
-The connecting vector is $\vec{v}=\vec{b'}-\vec{a'}=\begin{pmatrix}2-(-1)\\0-1\end{pmatrix}=\begin{pmatrix}3\\-1\end{pmatrix}$. Applying this to $b'$ gives us the position vector of $c'$.
+Now we know:  
+```math
+a'=(-1~|~1)\hspace{2cm}b'=(2~|~0)
+```
+The connecting vector is 
+```math
+\vec{v}=\vec{b'}-\vec{a'}=\begin{pmatrix}2-(-1)\\0-1\end{pmatrix}=\begin{pmatrix}3\\-1\end{pmatrix}
+```
+
+Applying this to $b'$ gives us the position vector of $c'$.
+```math
 $$\vec{c'}=\vec{b'}+\vec{v}=\begin{pmatrix}2+3\\0+(-1)\end{pmatrix}=\begin{pmatrix}5\\-1\end{pmatrix}$$
+```
 As the value is not directly on a diagonal ($|x|\neq{}|y|$), we can use the following table to determine the diagonal _ahead_ of our target value:
 
 | condition  | diagonal     |
