@@ -1,0 +1,10 @@
+[package]
+name        = "grambulate"
+version     = "0.1.0"
+edition     = "2021"
+description = "An implementation of grambulation for positive integers in Rust."
+license     = "MIT"
+repository  = "https://github.com/MatsFangohr/grambulate-rust"
+
+[dependencies]
+integer-sqrt = "0.1.5"
