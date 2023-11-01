@@ -2,6 +2,21 @@
 
 An implementation of grambulation in Rust, as initially explained [on Reddit](https://www.reddit.com/r/mathmemes/comments/tvn2gj/the_solution_to_the_april_fools_math/) and more precisely defined for [Code Golf](https://codegolf.stackexchange.com/questions/259698/implement-grambulation).
 
+## Speed
+
+The approach described below may seem confusing, but it avoids any loops that change with the inputs; the only loops in my code iterate only over the 4 types of `Diagonal`.
+
+This allows very low execution time regardless of input; results from a rough test on my computer:
+
+| `value_a`       | `value_b`        | time per iteration, average of 100'000'000 |
+| --------------- | ---------------- | ------------------------------------------ |
+| 1               | 2                | 529ns                                      |
+| 10              | 25               | 395ns                                      |
+| 100000          | 2500000          | 601ns                                      |
+| 100000000000000 | 2500000000000000 | 364ns                                      |
+
+These were just the first numbers I chose and this is in no way a proper test, but it'll do for an impression.
+
 ## Implementation
 
 If the MathJax doesn't render, try [viewing the README on GitHub](https://github.com/MatsFangohr/grambulate-rust).
@@ -82,18 +97,3 @@ We need the top-left diagonal. We also know that our value is on ring $r_c=\max(
 By definition, $c$ is smaller than that value. As the straight in front of the top-left diagonal is vertical and upwards, we need to subtract the difference between the y-value of 91 and the y-value of $c'$ from 91 and we should find $c$. $$c=91-((y_{91})-(y_{c'}))=91-((+1\cdot{}5)-(-1))=91-6=85$$
 
 That's it! $5~\lozenge{}~11=85$.
-
-## Speed
-
-This approach may seem confusing, but it avoids any loops that change with the inputs; the only loops in my code iterate over the 4 types of `Diagonal`, no more.
-
-This allows very low execution time regardless of input; results from a rough test on my computer:
-
-| `value_a`       | `value_b`        | time per iteration, average of 100'000'000 |
-| --------------- | ---------------- | ------------------------------------------ |
-| 1               | 2                | 529ns                                      |
-| 10              | 25               | 395ns                                      |
-| 100000          | 2500000          | 601ns                                      |
-| 100000000000000 | 2500000000000000 | 364ns                                      |
-
-These were just the first numbers I chose and this is in no way a proper test, but it'll do for an impression.
