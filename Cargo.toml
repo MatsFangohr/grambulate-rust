@@ -1,6 +1,6 @@
 [package]
 name        = "grambulate"
-version     = "0.1.0"
+version     = "0.1.1"
 edition     = "2021"
 description = "An implementation of grambulation for positive integers in Rust."
 license     = "MIT"
